@@ -74,5 +74,5 @@ Hotspot position: 47, Missense count: 3
 ## Author
 
 Recep Berke Küçükyağcı  
-Computer Science, 2nd year  
+BSc Computer Science Student
 Polish-Japanese Academy of Information Technology (PJATK), Warsaw
