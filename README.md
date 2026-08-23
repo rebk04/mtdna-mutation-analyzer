@@ -1,12 +1,12 @@
-# mtDNA Mutation Analyzer
+# mtDNA Mutation Analyser
 
-A command-line tool for analyzing point mutations in human mitochondrial DNA (mtDNA). Built in Python using only the standard library.
+A command-line tool for analysing point mutations in human mitochondrial DNA (mtDNA). Built in Python using only the standard library.
 
 ## Overview
 
-This tool loads a mitochondrial DNA sequence from a FASTA file, detects Open Reading Frames (ORFs), and allows the user to analyze point mutations — both manually and in bulk. It classifies mutations as **Silent**, **Missense**, or **Nonsense**, and performs statistical analysis to determine whether a given ORF's mutation profile differs significantly from the full mtDNA baseline.
+This tool loads a mitochondrial DNA sequence from a FASTA file, detects Open Reading Frames (ORFs), and allows the user to analyse point mutations — both manually and in bulk. It classifies mutations as **Silent**, **Missense**, or **Nonsense**, and performs statistical analysis to determine whether a given ORF's mutation profile differs significantly from the full mtDNA baseline.
 
-> Uses NCBI Translation Table 2 (Vertebrate Mitochondrial Code) — not the standard genetic code.
+> Uses NCBI Translation Table 1 - Standard Genetic code.
 
 ## Features
 
@@ -26,8 +26,8 @@ This tool loads a mitochondrial DNA sequence from a FASTA file, detects Open Rea
 ├── fasta_utils.py    # FASTA loading and DNA validation
 ├── orf_utils.py      # ORF detection algorithm
 ├── mutation_utils.py # Mutation parsing, codon operations, classification
-├── constants.py      # Vertebrate mitochondrial codon table
-├── models.py         # MutationRecord dataclass
+├── constants.py      # Standard genetic codon table
+├── models.py         # MutationRecord class
 ├── storage.py        # CSV export
 ├── decorators.py     # Timing decorator
 ├── exceptions.py     # Custom exceptions
@@ -50,7 +50,7 @@ Batch analysis tests every possible single-base substitution at every position o
 χ² = Σ (observed - expected)² / expected
 ```
 
-Expected values are normalized to match the ORF's total mutation count. P-value is computed analytically for df=2:
+Expected values are normalised to match the ORF's total mutation count. P-value is computed analytically for df=2:
 
 ```
 p = e^(-χ²/2)
